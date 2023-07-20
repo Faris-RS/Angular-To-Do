@@ -1,0 +1,83 @@
+<div
+  *ngIf="todos?.length"
+  class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4"
+>
+  <div *ngFor="let todo of todos" class="flex justify-center">
+    <div
+      [ngClass]="{
+        'bg-orange-500': todo.isComplete,
+        'bg-orange-200': !todo.isComplete
+      }"
+      class="flex-shrink-0 m-6 relative overflow-hidden rounded-lg max-w-xs shadow-lg"
+      (click)="onComplete(todo.id)"
+    >
+      <svg
+        class="absolute bottom-0 left-0 mb-8"
+        *ngIf="!todo.isComplete"
+        viewBox="0 0 375 283"
+        fill="none"
+        style="transform: scale(1.5); opacity: 0.1"
+      >
+        <rect
+          x="159.52"
+          y="175"
+          width="152"
+          height="152"
+          rx="8"
+          transform="rotate(-45 159.52 175)"
+          fill="white"
+        />
+        <rect
+          y="107.48"
+          width="152"
+          height="152"
+          rx="8"
+          transform="rotate(-45 0 107.48)"
+          fill="white"
+        />
+      </svg>
+      <svg
+      *ngIf="todo.isComplete"
+      class="absolute bottom-5 left-8"
+      width="24"
+      height="24"
+      fill="none"
+      viewBox="0 0 24 24"
+      style="transform: scale(7); opacity: 0.1"
+    >
+      <path
+        d="M5.5 12.5L9 16L19 6"
+        stroke="white"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+    
+
+      <div class="relative w-96 flex">
+        <div class="relative text-white px-6 pb-6 mt-6 w-full">
+          <div class="flex w-full">
+            <span
+              [ngClass]="{
+                'text-white': todo.isComplete,
+                'text-black': !todo.isComplete
+              }"
+              class="block font-semibold text-xl w-full"
+              >{{ todo.title }}</span
+            >
+            <button (click)="onDelete(todo.id)">
+              <span
+                class="bg-white ml-5 rounded-full text-orange-500 text-xs font-bold px-3 py-2 leading-none mr-32"
+              >
+                Remove
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!todos?.length" class="msg">Your Todo List is Empty!</div>

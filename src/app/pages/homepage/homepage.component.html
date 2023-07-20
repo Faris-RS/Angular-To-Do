@@ -1,0 +1,17 @@
+<!-- <app-header></app-header> -->
+<div>
+  <div class="flex justify-center mt-10">
+    <div class="justify-center">
+      <app-input></app-input>
+    </div>
+  </div>
+</div>
+<div class="text-orange-500 hover:text-orange-700 w-36 cursor-pointer mt-2" style="margin-left: 52%;">
+  <app-button
+    [buttonText]="'Clear All Completed'"
+    (buttonClicked)="onClearCompleted()"
+  ></app-button>
+</div>
+<div class="mt-2">
+  <app-todos></app-todos>
+</div>

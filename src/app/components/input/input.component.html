@@ -1,0 +1,13 @@
+<div class="relative text-gray-600 w-96">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <input
+      type="text"
+      name="title"
+      id="title"
+      placeholder="What to Add..."
+      class="w-96 h-10 px-5 pr-10 rounded-lg text-sm focus:outline-none"
+      ngModel
+    />
+    <button type="submit" class="absolute right-0 top-0 mt-2 mr-4">Add</button>
+  </form>
+</div>
