@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { TodoService } from 'src/app/services/todo.service';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-input',
@@ -9,6 +10,8 @@ import { TodoService } from 'src/app/services/todo.service';
 })
 export class InputComponent {
   constructor(private todoService: TodoService) {}
+
+  icon = faPlus;
 
   onSubmit(form: NgForm) {
     if (form.value.title) {

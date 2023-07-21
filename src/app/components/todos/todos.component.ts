@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { Guid } from 'guid-typescript'; 
 import { TodoService } from 'src/app/services/todo.service';
 
@@ -9,6 +10,8 @@ import { TodoService } from 'src/app/services/todo.service';
 })
 export class TodosComponent {
   constructor(private todoService: TodoService) {}
+
+  icon = faTrash;
 
   get todos() {
     return this.todoService.getTodos();

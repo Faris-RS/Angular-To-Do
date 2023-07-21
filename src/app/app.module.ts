@@ -8,6 +8,7 @@ import { TodosComponent } from './components/todos/todos.component';
 import { InputComponent } from './components/input/input.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { ButtonComponent } from './components/button/button.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ButtonComponent } from './components/button/button.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
