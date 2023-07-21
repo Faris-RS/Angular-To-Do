@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { TodoService } from 'src/app/services/todo.service';
 import { Todo } from 'src/app/models/todo.model';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-homepage',
@@ -9,6 +10,8 @@ import { Todo } from 'src/app/models/todo.model';
 })
 export class HomepageComponent {
   constructor(private todoService: TodoService) {}
+
+  icon = faTrash;
 
   get todos() {
     return this.todoService.getTodos();
